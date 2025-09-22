@@ -1,7 +1,10 @@
 import ProjectDescription
 
 let tuist = Tuist(
-    project: .tuist(plugins: [
-        .local(path: "../Tuist/Templates/Feature")
-    ])
+    project: .tuist(
+        plugins: [
+            .local(path: "../Tuist/Templates/Feature")
+        ],
+        generationOptions: .options(includeGenerateScheme: false)
+    )
 )

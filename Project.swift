@@ -2,6 +2,7 @@ import ProjectDescription
 
 let project = Project(
     name: "EZGames",
+    options: .options(automaticSchemesOptions: .disabled),
     targets: [
         .target(
             name: "EZGames",
