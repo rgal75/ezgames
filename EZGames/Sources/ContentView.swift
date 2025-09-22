@@ -1,14 +1,13 @@
+import Game2048
 import SwiftUI
 
 public struct ContentView: View {
-    public init() {}
+    private let game2048 = Game2048()
 
     public var body: some View {
-        Text("Hello, World!")
-            .padding()
+        AnyView(game2048.start())
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

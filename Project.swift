@@ -32,7 +32,10 @@ let project = Project(
             buildableFolders: [
                 "EZGames/Tests"
             ],
-            dependencies: [.target(name: "EZGames")]
+            dependencies: [
+                .target(name: "EZGames"),
+                .external(name: "ViewInspector")
+            ]
         ),
         // Game2048
         .target(
@@ -58,7 +61,10 @@ let project = Project(
                 "Features/Game2048/UI/Tests",
                 "Features/Game2048/Domain/Tests"
             ],
-            dependencies: [.target(name: "Game2048")]
+            dependencies: [
+                .target(name: "Game2048"),
+                .external(name: "ViewInspector")
+            ]
         ),
         .target(
             name: "Game2048Example",
