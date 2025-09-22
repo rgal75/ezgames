@@ -1,0 +1,13 @@
+import SwiftUI
+import {{ name }}Interface
+
+@main
+struct {{ name }}ExampleApp: App {
+    private let feature: any {{ name }}Interface = {{ name }}()
+    
+    var body: some Scene {
+        WindowGroup {
+            AnyView(feature.start())
+        }
+    }
+}

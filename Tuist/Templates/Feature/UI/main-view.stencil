@@ -1,0 +1,16 @@
+import Foundation
+import {{ name }}Interface
+
+public final class {{ name }}: {{ name }}Interface {
+    public init() {}
+    
+    public func start() -> any View {
+        {{ name }}View()
+    }
+}
+
+struct {{ name }}View: View {
+    var body: some View {
+        Text("{{ name }} Feature")
+    }
+}

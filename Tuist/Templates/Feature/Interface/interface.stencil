@@ -1,0 +1,5 @@
+import SwiftUI
+
+public protocol {{ name }}Interface {
+    func start() -> any View
+}

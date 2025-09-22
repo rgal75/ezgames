@@ -1,0 +1,14 @@
+@testable import {{ name }}
+
+import Foundation
+import SwiftUI
+import Testing
+import ViewInspector
+
+@MainActor
+struct {{ name }}ViewTests {
+    @Test("TODO: Replace this with actual test description")
+    func testSomething() throws {
+        #fail("TODO")
+    }
+}
