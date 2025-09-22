@@ -23,8 +23,8 @@ let template = Template(
         ),
         // UI/Tests
         .file(
-            path: "Features/{{ name }}/UI/Tests/{{ name }}Tests.swift",
-            templatePath: "UI/Tests/tests.stencil"
+            path: "Features/{{ name }}/UI/Tests/{{ name }}ViewTests.swift",
+            templatePath: "UI/Tests/ui-tests.stencil"
         ),
         
         // Domain

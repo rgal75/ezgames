@@ -1,9 +1,9 @@
 import SwiftUI
-import {{ name }}
+import Game2048
 
 @main
-struct {{ name }}ExampleApp: App {
-    private let feature: any {{ name }}Interface = {{ name }}()
+struct Game2048ExampleApp: App {
+    private let feature: any Game2048Interface = Game2048()
     
     var body: some Scene {
         WindowGroup {
