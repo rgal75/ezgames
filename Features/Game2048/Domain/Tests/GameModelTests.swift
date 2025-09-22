@@ -38,9 +38,9 @@ struct GameModelTests {
             [0, 0, 0, 0, 0],
             [0, 2, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 2, height: -3))
-        // Then
+
         #expect(sut.board[0][1] == 2)
         #expect(sut.board[0][3] == 2)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -55,9 +55,9 @@ struct GameModelTests {
             [0, 0, 0, 0, 0],
             [0, 2, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 2, height: -3))
-        // Then
+
         #expect(sut.board[0][1] == 4)
         #expect(sut.board[0][3] == 2)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -73,9 +73,9 @@ struct GameModelTests {
             [0, 2, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 2, height: 3))
-        // Then
+
         #expect(sut.board[3][1] == 2)
         #expect(sut.board[3][3] == 2)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -90,9 +90,9 @@ struct GameModelTests {
             [0, 2, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 2, height: 3))
-        // Then
+
         #expect(sut.board[3][1] == 4)
         #expect(sut.board[3][3] == 2)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -108,9 +108,9 @@ struct GameModelTests {
             [0, 2, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: -3, height: 2))
-        // Then
+
         #expect(sut.board[1][0] == 2)
         #expect(sut.board[2][0] == 2)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -125,9 +125,9 @@ struct GameModelTests {
             [0, 2, 0, 2, 0],
             [0, 0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: -3, height: 2))
-        // Then
+
         #expect(sut.board[1][0] == 2)
         #expect(sut.board[2][0] == 4)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -143,9 +143,9 @@ struct GameModelTests {
             [0, 2, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 3, height: 2))
-        // Then
+
         #expect(sut.board[1][4] == 2)
         #expect(sut.board[2][4] == 2)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -160,9 +160,9 @@ struct GameModelTests {
             [0, 2, 0, 2, 0],
             [0, 0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 3, height: 2))
-        // Then
+
         #expect(sut.board[1][4] == 2)
         #expect(sut.board[2][4] == 4)
         #expect(numberOf(0, on: sut.board) == 17)
@@ -178,12 +178,12 @@ struct GameModelTests {
             [2, 4, 2, 4, 2],
             [4, 2, 4, 2, 4]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 3, height: 2))
         sut.userDidSwipe(translation: CGSize(width: -3, height: 2))
         sut.userDidSwipe(translation: CGSize(width: 2, height: 3))
         sut.userDidSwipe(translation: CGSize(width: 2, height: -3))
-        // Then
+
         #expect(sut.board == [
             [2, 4, 2, 4, 2],
             [4, 2, 4, 2, 4],
@@ -200,12 +200,12 @@ struct GameModelTests {
             [2, 4, 2, 4, 2],
             [4, 2, 4, 2, 4]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 3, height: 2))
         sut.userDidSwipe(translation: CGSize(width: -3, height: 2))
         sut.userDidSwipe(translation: CGSize(width: 2, height: 3))
         sut.userDidSwipe(translation: CGSize(width: 2, height: -3))
-        // Then
+
         #expect(sut.gameResult == .lost)
     }
     
@@ -217,9 +217,9 @@ struct GameModelTests {
             [2, 4, 2, 4, 2],
             [4, 2, 4, 2, 4]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: -3, height: 2))
-        // Then
+
         #expect(sut.gameResult == .won)
     }
     
@@ -231,9 +231,9 @@ struct GameModelTests {
             [0, 0, 0, 0],
             [0, 2, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 0, height: -10)) // up
-        // Then
+
         #expect(sut.tileWasMergedInLastMoveAt(row: 0, col: 1)) // 2+2 merge at (0,1)
     }
 
@@ -245,9 +245,9 @@ struct GameModelTests {
             [0, 0, 0, 0],
             [0, 2, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: 0, height: -10)) // up
-        // Then
+
         #expect(!sut.tileWasMergedInLastMoveAt(row: 0, col: 3)) // No merge at (0,3)
     }
 
@@ -259,9 +259,9 @@ struct GameModelTests {
             [0, 0, 0, 0],
             [0, 0, 0, 0]
         ])
-        // When
+
         sut.userDidSwipe(translation: CGSize(width: -10, height: 0)) // left
-        // Then
+
         #expect(sut.tileWasMergedInLastMoveAt(row: 1, col: 0)) // 2+2 merge at (1,0)
     }
 
@@ -273,7 +273,7 @@ struct GameModelTests {
             [0, 0, 0, 0],
             [0, 2, 0, 0]
         ])
-        // Then
+
         for row in 0..<4 {
             for col in 0..<4 {
                 #expect(!sut.tileWasMergedInLastMoveAt(row: row, col: col))
