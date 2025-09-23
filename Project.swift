@@ -83,9 +83,8 @@ let project = Project(
             name: "EZGames",
             shared: true,
             buildAction: .buildAction(targets: ["EZGames"]),
-            testAction: .targets([
-                "EZGamesTests",
-                "Game2048Tests"
+            testAction: .testPlans([
+                "EZGames/EZGames.xctestplan"
             ])
         ),
         .scheme(

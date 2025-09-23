@@ -1,0 +1,39 @@
+{
+  "configurations" : [
+    {
+      "id" : "B7FDF939-E801-43BD-B3C9-87F6BDDBDC0E",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:EZGames.xcodeproj",
+      "identifier" : "46DCDB4AC193F845C8029691",
+      "name" : "EZGames"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:EZGames.xcodeproj",
+        "identifier" : "586982F79E15728983E2716F",
+        "name" : "EZGamesTests"
+      }
+    },
+    {
+      "parallelizable" : false,
+      "target" : {
+        "containerPath" : "container:EZGames.xcodeproj",
+        "identifier" : "7CB5BD36DEF788BDDF4F4D27",
+        "name" : "Game2048Tests"
+      }
+    }
+  ],
+  "version" : 1
+}
