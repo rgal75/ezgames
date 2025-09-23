@@ -21,7 +21,9 @@ let project = Project(
                 "EZGames/Sources",
                 "EZGames/Resources",
             ],
-            dependencies: []
+            dependencies: [
+                .target(name: "Game2048")
+            ]
         ),
         .target(
             name: "EZGamesTests",
