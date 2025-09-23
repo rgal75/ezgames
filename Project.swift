@@ -93,8 +93,8 @@ let project = Project(
             name: "Game2048Example",
             shared: true,
             buildAction: .buildAction(targets: ["Game2048Example"]),
-            testAction: .targets([
-                "Game2048Tests"
+            testAction: .testPlans([
+                "Features/Game2048/Game2048.xctestplan"
             ])
         )
     ]
