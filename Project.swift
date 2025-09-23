@@ -1,101 +1,10 @@
 import ProjectDescription
+import ProjectDescriptionHelpers
 
-let project = Project(
-    name: "EZGames",
-    options: .options(automaticSchemesOptions: .disabled),
-    targets: [
-        .target(
-            name: "EZGames",
-            destinations: .iOS,
-            product: .app,
-            bundleId: "hu.galiasys.EZGames",
-            infoPlist: .extendingDefault(
-                with: [
-                    "UILaunchScreen": [
-                        "UIColorName": "",
-                        "UIImageName": "",
-                    ],
-                ]
-            ),
-            buildableFolders: [
-                "EZGames/Sources",
-                "EZGames/Resources",
-            ],
-            dependencies: [
-                .target(name: "Game2048")
-            ]
-        ),
-        .target(
-            name: "EZGamesTests",
-            destinations: .iOS,
-            product: .unitTests,
-            bundleId: "hu.galiasys.EZGamesTests",
-            infoPlist: .default,
-            buildableFolders: [
-                "EZGames/Tests"
-            ],
-            dependencies: [
-                .target(name: "EZGames"),
-                .external(name: "ViewInspector")
-            ]
-        ),
-        // Game2048
-        .target(
-            name: "Game2048",
-            destinations: .iOS,
-            product: .framework,
-            bundleId: "hu.galiasys.Game2048",
-            infoPlist: .default,
-            sources: .sourceFilesList(globs: [
-                .glob("Features/Game2048/Interface/**"),
-                .glob("Features/Game2048/UI/**", excluding: ["Features/Game2048/UI/Tests/**"]),
-                .glob("Features/Game2048/Domain/**", excluding: ["Features/Game2048/Domain/Tests/**"]),
-            ]),
-            dependencies: []
-        ),
-        .target(
-            name: "Game2048Tests",
-            destinations: .iOS,
-            product: .unitTests,
-            bundleId: "hu.galiasys.Game2048Tests",
-            infoPlist: .default,
-            buildableFolders: [
-                "Features/Game2048/UI/Tests",
-                "Features/Game2048/Domain/Tests"
-            ],
-            dependencies: [
-                .target(name: "Game2048"),
-                .external(name: "ViewInspector")
-            ]
-        ),
-        .target(
-            name: "Game2048Example",
-            destinations: .iOS,
-            product: .app,
-            bundleId: "hu.galiasys.Game2048Example",
-            infoPlist: .default,
-            buildableFolders: [
-                "Features/Game2048/Example"
-            ],
-            dependencies: [.target(name: "Game2048")]
-        )
-    ],
-    schemes: [
-        .scheme(
-            name: "EZGames",
-            shared: true,
-            buildAction: .buildAction(targets: ["EZGames"]),
-            testAction: .testPlans([
-                "EZGames/EZGames.xctestplan"
-            ])
-        ),
-        .scheme(
-            name: "Game2048Example",
-            shared: true,
-            buildAction: .buildAction(targets: ["Game2048Example"]),
-            testAction: .testPlans([
-                "Features/Game2048/Game2048.xctestplan"
-            ])
-        )
-    ]
-)
+let project = ProjectBuilder
+    .project(
+        name: "EZGames",
+        bundleIdPrefix: "hu.galiasys"
+    )
+    .addFeature(name: "Game2048")
+    .build()
