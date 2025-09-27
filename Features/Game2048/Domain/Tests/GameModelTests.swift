@@ -1,16 +1,9 @@
-//
-//  GameModelTests.swift
-//  Game2048Tests
-//
-//  Created by Richard Gal on 2025. 03. 15..
-//
-
 import Foundation
 import Testing
 
 @testable import Game2048
 
-struct GameModelTests {
+final class GameModelTests: @unchecked Sendable {
 
     @Test("Creates a rectangular board")
     func testCreateBoard() async throws {

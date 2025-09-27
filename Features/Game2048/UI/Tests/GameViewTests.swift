@@ -7,6 +7,7 @@ import ViewInspector
 
 @MainActor
 struct GameViewTests {
+final class GameViewTests: @unchecked Sendable {
     @Test("GameView shows a board of 4x4 tiles")
     func testBoardSize() async throws {
         let sut = GameView()
