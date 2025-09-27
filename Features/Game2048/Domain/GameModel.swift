@@ -14,6 +14,7 @@ enum GameResult {
     case lost
     case ongoing
 }
+
 @Observable
 final class GameModel {
     let boardSize: BoardSize
