@@ -11,13 +11,18 @@ public final class Game2048: Game2048Interface {
     public init() {}
     
     public func start() -> any View {
-        GameView()
+        GameView(game: GameModel())
     }
 }
 
 // Game descriptions: https://rosettacode.org/wiki/2048
 struct GameView: View {
-    @State private var game = GameModel()
+    @State private var game: GameModel
+    
+    init(game: GameModel) {
+        self.game = game
+    }
+    
     var body: some View {
         VStack {
             ForEach(0..<game.boardSize.height, id: \.self) { row in
@@ -26,10 +31,12 @@ struct GameView: View {
                         let value = game.board[row][col]
                         if game.tileWasMergedInLastMoveAt(row: row, col: col) {
                             TileView(value: value, row: row, col: col)
+                                .id("tile[\(row), \(col)]")
                                 .transition(.scale.combined(with: .opacity))
                                 .animation(.spring(response: 0.4, dampingFraction: 0.6, blendDuration: 0.5), value: value)
                         } else {
                             TileView(value: value, row: row, col: col)
+                                .id("tile[\(row), \(col)]")
                         }
                     }
                 }
@@ -60,5 +67,5 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView()
+    GameView(game:  GameModel())
 }

@@ -15,6 +15,6 @@ struct TileView: View {
             .background(Color.orange.opacity((sqrt(Double(value)) + 5) / 11))
             .foregroundColor(.white)
             .cornerRadius(8)
-            .id(value == 0 ? "empty-\(row)-\(col)" : "tile-\(row)-\(col)-\(value)")
+            .id("tile[\(row), \(col)]")
     }
 }
